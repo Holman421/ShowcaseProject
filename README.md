@@ -1,48 +1,22 @@
-# Welcome to my Weatherscape application repository 
+# Welcome to my showcase project repository 
 
 https://testfinal-8d269.web.app
 
-Weatherscape is a web application for weather forecast.
-For now the app is not responsive and mobile friendly. 
-
 ## Tech stack
 
-React, Javascript, CSS Modules, Firebase provider for backend and database
+React, Javascript, MUI, Firebase for hosting
 
-## Desciption/Manual
 
-Weatherscape is a made up name for this project. 
+### `Comment`
 
-### `Unlogged user`
+For now the project is written in JS, but I am currently learning Typescript and I plan on using it on daily basis.  <br />
 
-At first you are greeted with option to login or register. After some nice animation you can use the forms (click headline in left top to redo the animation).  <br />
-When creating the forms I focused on making them user friendly such as giving the user feedback about bad inputs even before submiting and not allowing to submit them with bad inputs.
+Building this project was a lot of fun. With more time, I can see myself adding additional functionality such as integrating Redux, refactoring into TypeScript, implementing user authentication and database with Firebase, enabling editing of todos and mouse drag/drop capabilities, improving UI and animations, and making it mobile-friendly.
 
-### `Logged user`
+In my role at NN, I work with a variety of topics and technologies. Some of the notable ones include:
 
-Now you greeted with empty table of your town cards for forecasts and 2 options. You can either simply logout or add new town. After adding the town you can see current weather, temperature and time in the town. Sometimes the window needs extra manual reload to see the towns, its an unwanted bug with async code which I am still working on.  <br />
-Weather API that I am using have capped 500 daily calls soo each town card has its own manual update button to reduce API calls. Each town also have a delete button.  <br />
-Each user has its own list of towns.  
+React, JS, soon TS, MUI, SASS, React Context, Redux, authentication with MSAL Azure library, posting and getting data from API, git actions, responsive design, communicating with UI/UX designers, discussing and planning intern react apps architecture. <br />
 
-## Future plans
+Also I was responsible for testing a new React component library with NN styles, developed by the NN team in Spain. Afterwards, I completed an analysis of the library.
 
-Use Typescript instead of plain JS.  <br />
-Use Tailwing instead of CSS Modules.  <br />
-Use some external CSS animation library (Framer Motion/react-transition-group) instead of doing the Unlogged page animation with plain CSS Modules and react States. 
 
-## Strengths & Flaws
-
-Connected to this project I want to mention some strengths that I am proud of and flaws that I am aware of. I am working on improving both of them.
-
-### `Strengths`
-
-Animations.
-Look and functionality of forms.
-Overall UI.
-
-### `Flaws`
-
-Working with async code.
-Messy css files.
-Structure of files.
-Unnecessary JS logic in html.
