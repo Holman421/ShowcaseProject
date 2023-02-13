@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./Components/Navbar/Navbar";
+import { Route, Routes } from "react-router-dom";
+import LandingPage from "./Pages/LandingPage/LandingPage";
+import TodoPage from "./Pages/TodoPage/TodoPage";
+import WeatherPage from "./Pages/WeatherPage/WeatherPage";
+import MainLayout from "./Components/MainLayout/MainLayout";
+import NotFoundPage from "./Pages/NotFoundPage/NotFoundPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Navbar />
+      <MainLayout>
+        <Routes>
+          <Route path="/" element={<LandingPage />}></Route>
+          <Route path="/todo" element={<TodoPage />}></Route>
+          <Route path="/weather" element={<WeatherPage />}></Route>
+          <Route path="/*" element={<NotFoundPage />}></Route>
+        </Routes>
+      </MainLayout>
     </div>
   );
 }
