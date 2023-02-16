@@ -36,7 +36,7 @@ const WeatherPage = () => {
       <Typography
         variant="h4"
         sx={{
-          padding: "4rem 0 2rem 0",
+          padding: "2rem 0 2rem 0",
           fontWeight: "bold",
           color: "#414141",
           textAlign: "center",
