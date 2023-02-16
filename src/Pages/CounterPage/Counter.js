@@ -1,6 +1,17 @@
 import { Box, Button, keyframes, Paper, Slider, Typography } from "@mui/material";
 import React, { useState } from "react";
 
+const render = keyframes`
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+`;
+
 const Counter = () => {
   const [count, setCount] = useState(0);
   const [randomBoxes, setRandomBoxes] = useState([]);
@@ -75,7 +86,7 @@ const Counter = () => {
         backgroundColor: "#F1EDEB",
         borderRadius: ".5rem",
         width: "auto",
-        // animation: `${render} 400ms ease`,
+        animation: `${render} 400ms ease`,
         paddingBottom: "3rem",
         display: "flex",
         alignItems: "center",
@@ -91,11 +102,11 @@ const Counter = () => {
         }}>
         Counter
       </Typography>
-      <Box sx={{ display: "inline !important" }}>
+      <Box sx={{ display: "flex" }}>
         <Button onClick={incrementCounterHandler} sx={{ padding: ".5rem" }} variant="contained">
           +
         </Button>
-        <Paper sx={{ padding: ".5rem 1rem", margin: "0 1rem", display: "inline-block" }}>
+        <Paper sx={{ padding: "0 1rem", margin: "0 1rem", display: "grid", alignItems: "center" }}>
           <Typography>{count}</Typography>
         </Paper>
         <Button onClick={decrementCounterHandler} sx={{ padding: ".5rem" }} variant="contained">
@@ -180,14 +191,3 @@ const Counter = () => {
 };
 
 export default Counter;
-
-// const render = keyframes`
-//   from {
-//     transform: translateY(-10px);
-//     opacity: 0;
-//   }
-//   to {
-//     transform: translateY(0px);
-//     opacity: 1;
-//   }
-// `;
