@@ -10,7 +10,7 @@ const MainLayout = (props) => {
         <Sidebar></Sidebar>
       </Grid>
       <Grid item xs>
-        <Box p={5}>{props.children}</Box>
+        <Box sx={{padding:"1rem"}}>{props.children}</Box>
       </Grid>
     </Grid>
   );
