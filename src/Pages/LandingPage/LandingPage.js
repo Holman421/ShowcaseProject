@@ -1,16 +1,6 @@
-import { Typography, Box, keyframes } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 import React from "react";
-
-const render = keyframes`
-  from {
-    transform: translateY(-10px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-`;
+import fadeInAnimation from "../../Components/fadeInAnimation";
 
 const LandingPage = () => {
   return (
@@ -19,7 +9,7 @@ const LandingPage = () => {
         backgroundColor: "#F1EDEB",
         borderRadius: ".5rem",
         width: "auto",
-        animation: `${render} 400ms ease`,
+        animation: `${fadeInAnimation} 400ms ease`,
         paddingBottom: "3rem"
       }}>
       <Typography variant="h5" sx={{ padding: "2rem", fontWeight: "bold", color: "#414141" }}>

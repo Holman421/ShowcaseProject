@@ -1,18 +1,8 @@
-import { Box, Typography, Button, keyframes } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import fadeInAnimation from "../../Components/fadeInAnimation";
 import { TodoContext } from "../../Context/TodoContext";
-
-const render = keyframes`
-  from {
-    transform: translateY(-10px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-`;
 
 const NotFoundPage = () => {
   let navigate = useNavigate();
@@ -34,7 +24,7 @@ const NotFoundPage = () => {
         flexDirection: "column",
         alignItems: "center",
         paddingBottom: "3rem",
-        animation: `${render} 400ms ease`,
+        animation: `${fadeInAnimation} 400ms ease`,
       }}>
       <Typography
         variant="h4"

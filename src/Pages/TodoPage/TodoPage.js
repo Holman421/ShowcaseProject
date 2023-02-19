@@ -1,18 +1,8 @@
-import { Box, Button, keyframes, TextField, Typography } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import React, { useContext } from "react";
+import fadeInAnimation from "../../Components/fadeInAnimation";
 import { TodoContext } from "../../Context/TodoContext";
 import RenderTodos from "./RenderTodos";
-
-const render = keyframes`
-  from {
-    transform: translateY(-10px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-`;
 
 const TodoPage = () => {
   const todoContext = useContext(TodoContext);
@@ -27,7 +17,7 @@ const TodoPage = () => {
         flexDirection: "column",
         alignItems: "center",
         paddingBottom: "3rem",
-        animation: `${render} 400ms ease`
+        animation: `${fadeInAnimation} 400ms ease`,
       }}>
       <Typography
         variant="h4"

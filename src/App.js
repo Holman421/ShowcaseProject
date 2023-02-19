@@ -5,7 +5,7 @@ import TodoPage from "./Pages/TodoPage/TodoPage";
 import WeatherPage from "./Pages/WeatherPage/WeatherPage";
 import MainLayout from "./Components/MainLayout/MainLayout";
 import NotFoundPage from "./Pages/NotFoundPage/NotFoundPage";
-import Counter from "./Pages/CounterPage/Counter";
+import CounterPage from "./Pages/CounterPage/CounterPage";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           <Route path="/" element={<LandingPage />}></Route>
           <Route path="/todo" element={<TodoPage />}></Route>
           <Route path="/weather" element={<WeatherPage />}></Route>
-          <Route path="/counter" element={<Counter />}></Route>
+          <Route path="/counter" element={<CounterPage />}></Route>
           <Route path="/*" element={<NotFoundPage />}></Route>
         </Routes>
       </MainLayout>

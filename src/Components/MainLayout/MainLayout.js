@@ -5,12 +5,12 @@ import Sidebar from "../Sidebar/Sidebar";
 
 const MainLayout = (props) => {
   return (
-    <Grid container sx={{ height: "calc(100vh - 4rem)"}}>
+    <Grid container sx={{ height: "calc(100vh - 4rem)" }}>
       <Grid item>
         <Sidebar></Sidebar>
       </Grid>
       <Grid item xs>
-        <Box p={5}>{props.children}</Box>
+        <Box sx={{ padding: "1rem", height:"100%" }}>{props.children}</Box>
       </Grid>
     </Grid>
   );

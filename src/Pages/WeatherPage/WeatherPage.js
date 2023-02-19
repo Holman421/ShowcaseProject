@@ -1,18 +1,8 @@
-import { Box, Button, CircularProgress, TextField, Typography, keyframes } from "@mui/material";
+import { Box, Button, CircularProgress, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
+import fadeInAnimation from "../../Components/fadeInAnimation";
 import useFetch from "../../CustomHooks/useFetch";
 import Town from "./Town";
-
-const render = keyframes`
-  from {
-    transform: translateY(-10px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-`;
 
 const WeatherPage = () => {
   const [town, setTown] = useState("");
@@ -31,7 +21,7 @@ const WeatherPage = () => {
         flexDirection: "column",
         alignItems: "center",
         paddingBottom: "3rem",
-        animation: `${render} 400ms ease`,
+        animation: `${fadeInAnimation} 400ms ease`,
       }}>
       <Typography
         variant="h4"
