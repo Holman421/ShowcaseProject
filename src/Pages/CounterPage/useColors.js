@@ -6,7 +6,7 @@ const useColors = () => {
     g: [0, 255],
     b: [0, 255],
   });
-  const minDistanceSliderColors = 15;
+  const minDistanceSliderColors = 25;
   const handleSetRandomColors = (event, newValue, activeThumb, color) => {
     if (!Array.isArray(newValue)) {
       return;
@@ -14,7 +14,7 @@ const useColors = () => {
 
     if (newValue[1] - newValue[0] < minDistanceSliderColors) {
       if (activeThumb === 0) {
-        const clamped = Math.min(newValue[0], 255 - minDistanceSliderColors);
+        const clamped = Math.min(newValue[0], 250 - minDistanceSliderColors);
         setRandomColors((prevState) => ({
           ...prevState,
           [color]: [clamped, clamped + minDistanceSliderColors],

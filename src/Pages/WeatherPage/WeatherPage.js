@@ -31,7 +31,7 @@ const WeatherPage = () => {
           color: "#414141",
           textAlign: "center",
         }}>
-        Weather App
+        Weatherscape
       </Typography>
       <form onSubmit={sendRequest}>
         <Box sx={{ display: "flex", marginBottom: data ? "3rem" : "0" }}>

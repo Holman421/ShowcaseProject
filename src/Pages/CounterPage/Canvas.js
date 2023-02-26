@@ -1,49 +1,75 @@
-import { Box } from "@mui/material";
+import { Box, Tooltip } from "@mui/material";
 import React from "react";
 import RandomBox from "./RandomBox";
+import DownloadIcon from "@mui/icons-material/Download";
 
 const Canvas = (props) => {
-  const { randomBoxes, canvasRef, deleteSingleRandomBoxHandler, showBorder } = props;
+  const {
+    randomBoxes,
+    canvasRef,
+    deleteSingleRandomBoxHandler,
+    showBorder,
+    screenshotDownloadHandler,
+  } = props;
   return (
-    <Box
-      ref={canvasRef}
-      sx={{
-        // flex: "1 1 auto",
-        minWidth: "200px",
-        minHeight: "200px",
-        // width: "calc(100% - 4rem)",
-        resize: "both",
-        overflow: "hidden",
-        marginBottom: "2rem",
-        backgroundColor: "white",
-        position: "relative",
-        boxSizing: "content-box",
-        border: showBorder ? "2px solid #1976d2" : "none",
-        borderRadius: showBorder ? ".5rem" : "0",
-      }}>
+    <Tooltip title="Click & hold right there and resize your canvas" arrow placement="right-end">
       <Box
+        ref={canvasRef}
         sx={{
-          top: "0px",
-          left: "0px",
-          height: "0px",
-          width: "0px",
+          width: "27.5rem",
+          minWidth: "200px",
+          minHeight: "200px",
+          maxWidth: "95% !important",
+          resize: "both",
+          overflow: "hidden",
+          marginBottom: "2rem",
+          backgroundColor: "white",
+          position: "relative",
+          boxSizing: "content-box",
+          border: showBorder ? "2px solid #1976d2" : "none",
+          borderRadius: showBorder ? ".5rem" : "0",
+          "&::-webkit-resizer": {
+            content: '""',
+            borderStyle: "solid",
+            borderWidth: "0 0 18px 18px",
+            borderColor: "transparent transparent #1976d2 transparent",
+            position: "absolute",
+            bottom: "-18px",
+            right: "-18px",
+            cursor: "nwse-resize",
+          },
         }}>
-        {randomBoxes.map((box) => {
-          return (
-            <RandomBox
-              key={box.id}
-              x={box.xUpdated}
-              y={box.yUpdated}
-              id={box.id}
-              size={box.size}
-              color={box.color}
-              border={box.border}
-              deleteSingleRandomBoxHandler={deleteSingleRandomBoxHandler}
-            />
-          );
-        })}
+        <Tooltip title={"Download screenshot"} placement="top" arrow>
+          <DownloadIcon
+            onClick={screenshotDownloadHandler}
+            color="primary"
+            sx={{
+              position: "absolute",
+              right: "1px",
+              top: "3px",
+              cursor: "pointer",
+              fontSize: "1.6rem",
+            }}></DownloadIcon>
+        </Tooltip>
+        {/* <Box
+          sx={{
+            top: "0px",
+            left: "0px",
+            height: "0px",
+            width: "0px",
+          }}> */}
+          {randomBoxes.map((box) => {
+            return (
+              <RandomBox
+                key={box.id}
+                box={box}
+                deleteSingleRandomBoxHandler={deleteSingleRandomBoxHandler}
+              />
+            );
+          })}
+        {/* </Box> */}
       </Box>
-    </Box>
+    </Tooltip>
   );
 };
 

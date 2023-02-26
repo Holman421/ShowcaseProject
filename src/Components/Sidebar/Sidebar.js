@@ -7,7 +7,7 @@ import CloudIcon from "@mui/icons-material/Cloud";
 import RemoveIcon from "@mui/icons-material/Remove";
 import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 import { TodoContext } from "../../Context/TodoContext";
-import PlusOneIcon from '@mui/icons-material/PlusOne';
+import AspectRatioIcon from '@mui/icons-material/AspectRatio';
 
 const Sidebar = () => {
   const [isSidebarShown, setIsSidebarShown] = useState(true);
@@ -20,9 +20,9 @@ const Sidebar = () => {
 
   const Links = [
     { name: "Home", url: "", icon: (sx) => <HomeIcon sx={sx} /> },
-    { name: "Todo App", url: "todo", icon: (sx) => <LibraryBooksIcon sx={sx} /> },
-    { name: "Weather App", url: "weather", icon: (sx) => <CloudIcon sx={sx} /> },
-    { name: "Counter", url: "counter", icon: (sx) => <PlusOneIcon sx={sx} /> },
+    { name: "Taskify", url: "todo", icon: (sx) => <LibraryBooksIcon sx={sx} /> },
+    { name: "Weatherscape", url: "weather", icon: (sx) => <CloudIcon sx={sx} /> },
+    { name: "Chaos Canvas", url: "counter", icon: (sx) => <AspectRatioIcon sx={sx} /> },
     { name: "Example page 2", url: "2", icon: (sx) => <QuestionMarkIcon sx={sx} /> },
     { name: "Example page 3", url: "3", icon: (sx) => <QuestionMarkIcon sx={sx} /> },
   ];

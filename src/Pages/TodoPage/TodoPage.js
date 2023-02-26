@@ -27,7 +27,7 @@ const TodoPage = () => {
           color: "#414141",
           textAlign: "center",
         }}>
-        Todo App
+        Taskify
       </Typography>
       <form onSubmit={todoContext.addTodo}>
         <Box sx={{ display: "flex", marginBottom: "4rem" }}>

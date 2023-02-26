@@ -2,8 +2,8 @@ import { Box } from "@mui/system";
 import React from "react";
 
 const RandomBox = (props) => {
-  const { id, x, y, size, color, border, deleteSingleRandomBoxHandler } = props;
-
+  const { box, deleteSingleRandomBoxHandler } = props;
+  const { id, xUpdated, yUpdated, size, color, border, transitionLength } = box;
   return (
     <Box
       onClick={() => {
@@ -12,12 +12,12 @@ const RandomBox = (props) => {
       key={id}
       sx={{
         position: "absolute",
-        left: `${x}%`,
-        top: `${y}%`,
+        left: `${xUpdated}%`,
+        top: `${yUpdated}%`,
         width: `${size}px`,
         height: `${size}px`,
         backgroundColor: `rgb(${color.r}, ${color.g}, ${color.b})`,
-        transition: "all 300ms ease, transform 30s ease-out, box-shadow 0.2s ease-out",
+        transition: `all ${transitionLength}ms ease, transform 30s ease-out, box-shadow 0.2s ease-out`,
         ":hover": {
           transform: "scale(1.1) rotate(1000deg)",
           boxShadow: "0 0 10px rgba(0, 0, 0, 0.8)",

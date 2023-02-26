@@ -15,10 +15,10 @@ const Navbar = () => {
         alignItems: "center"
       }}>
       <Typography variant="h5" sx={{ padding: "2rem", fontWeight: "bold", color: "#414141" }}>
-        Showcase project for Agnostix
+        Aleš Holman Portfolio
       </Typography>
       <Typography variant="h5" sx={{ padding: "2rem", fontWeight: "bold", color: "#414141" }}>
-        By Aleš Holman
+        Prototype version
       </Typography>
     </Box>
   );
