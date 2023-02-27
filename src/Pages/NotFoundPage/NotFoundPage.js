@@ -1,13 +1,41 @@
 import { Box, Typography, Button } from "@mui/material";
 import { defineElement } from "lord-icon-element";
 import Lottie from "lottie-web";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import fadeInAnimation from "../../Components/fadeInAnimation";
 
 defineElement(Lottie.loadAnimation);
 
 const NotFoundPage = () => {
   const [isRunning, setIsRunning] = useState(false);
+  const myRef = useRef(null);
+
+  const setIsRunningHandler = () => {
+    setIsRunning(() => !isRunning);
+  };
+
+  useEffect(() => {
+    function handleMouseIn() {
+      console.log("Mouse entered");
+      setIsRunning(true);
+    }
+    function handleMouseOut() {
+      console.log("Mouse leaved");
+      setIsRunning(false);
+    }
+
+    if (myRef.current) {
+      myRef.current.addEventListener("mouseover", handleMouseIn);
+      myRef.current.addEventListener("mouseout", handleMouseOut);
+
+      return () => {
+        if (myRef.current) {
+          myRef.current.removeEventListener("mouseover", handleMouseIn);
+          myRef.current.removeEventListener("mouseout", handleMouseOut);
+        }
+      };
+    }
+  }, [myRef.current]);
 
   return (
     <Box
@@ -29,9 +57,11 @@ const NotFoundPage = () => {
       </button>
       <lord-icon
         src="https://cdn.lordicon.com/wcjauznf.json"
-        trigger={isRunning ? "loop" : "hover"}
+        trigger={isRunning ? "loop" : ""}
         colors="primary:#121331,secondary:#08a88a"
-        style={{ width: "50px", height: "150px" }}></lord-icon>
+        style={{ width: "50px", height: "50px" }}
+      />
+      <Box ref={myRef} sx={{ width: "100px", height: "100px", backgroundColor: "tomato" }}></Box>
     </Box>
   );
 };
